@@ -1,20 +1,17 @@
 import './App.css';
-import Popup from './components/Popup';
-import { useState } from 'react'
+import AppRouter from './components/AppRouter';
 
 function App() {
-  const [buttonPopup, setButtonPopup] = useState(false);
   return (
     <div className="App">
-      <main>
-        <h1>UC-Lavatories</h1>
-        <button onClick={() => setButtonPopup(true)}>submit review</button>
-      </main>
+      <ul id ='nav-list'>
+        <li><a href = "http://localhost:3000/"> Home</a></li>
+        <li><a href = "http://localhost:3000/map"> Map</a></li>
+        <li><a href = "http://localhost:3000/reviews"> Reviews</a></li>
+      </ul>
+      <AppRouter />
 
-      <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-          <h3>My popup</h3>
-          <p>placeholder, will be a form here soon</p>
-      </Popup>
+      
     </div>
   );
 }
