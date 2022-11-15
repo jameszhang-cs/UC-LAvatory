@@ -25,7 +25,7 @@ function Map() {
             <Popup>
               <h2>{building.properties.NAME}</h2>
               <button>
-                Select
+                <a href = {"http://localhost:3000/" + building.properties.id}>See data for {building.properties.NAME}</a>
               </button>
             </Popup>
           </Marker>
