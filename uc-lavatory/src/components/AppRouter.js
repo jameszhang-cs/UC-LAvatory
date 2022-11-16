@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-
 import HomePage from '../pages/Homepage'
 import Map from '../pages/Map'
 import Reviews from '../pages/Reviews'

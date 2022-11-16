@@ -10,6 +10,7 @@
         "properties": {
           "BUILDING_ID": 960,
           "NAME": "Boelter Hall",
+          "id": "boelterhall",
           "OPEN": null
         },
         "geometry": {
@@ -22,6 +23,7 @@
         "properties": {
           "BUILDING_ID": 875,
           "NAME": "Schoenberg Hall",
+          "id": "schoenberghall",
           "OPEN": null
         },
         "geometry": {
