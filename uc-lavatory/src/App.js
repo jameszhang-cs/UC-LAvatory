@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
       <div className = "Navbar">
-        <a href = "http://localhost:3000/UC-LAvatory"> Home</a>
-        <a href = "http://localhost:3000/UC-LAvatory/map"> Map</a>
-        <a href = "http://localhost:3000/UC-LAvatory/reviews"> Reviews</a>
+        <a href = "http://localhost:3000"> Home</a>
+        <a href = "http://localhost:3000/map"> Map</a>
+        <a href = "http://localhost:3000/reviews"> Reviews</a>
       </div>
       <AppRouter />
     </div>
