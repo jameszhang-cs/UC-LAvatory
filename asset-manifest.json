@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/UC-LAvatory/static/css/main.c373eab6.css",
-    "main.js": "/UC-LAvatory/static/js/main.a74838e5.js",
+    "main.js": "/UC-LAvatory/static/js/main.5c936c07.js",
     "index.html": "/UC-LAvatory/index.html",
     "main.c373eab6.css.map": "/UC-LAvatory/static/css/main.c373eab6.css.map",
-    "main.a74838e5.js.map": "/UC-LAvatory/static/js/main.a74838e5.js.map"
+    "main.5c936c07.js.map": "/UC-LAvatory/static/js/main.5c936c07.js.map"
   },
   "entrypoints": [
     "static/css/main.c373eab6.css",
-    "static/js/main.a74838e5.js"
+    "static/js/main.5c936c07.js"
   ]
 }
