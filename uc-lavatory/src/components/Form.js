@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Form.css'
+import Axios from 'axios'
 
 const Form = () => {
   const [formData, setFormData]=useState({
@@ -14,12 +15,35 @@ const Form = () => {
     setFormData(prevData => ({
         ...prevData, [name]:value
     }));
+    setRevBody(event.target.value)
+  }
+
+  const [revLocation, setRevLocation] = useState('')
+  const [revRating, setRevRating] = useState('')
+  const [revBody, setRevBody] = useState('')
+
+  const submitReview = () =>{
+    if (revRating.length === 0){
+      alert("Rating has been left blank!")
+    }
+    else if (revBody.length === 0){
+      alert("Review has been left blank!")
+    }
+    else{
+      Axios.post('http://localhost:5000/api/insert', {
+        revLocation: revLocation, 
+        revRating: revRating, 
+        revBody: revBody
+      }).then(() => {
+        alert("Success!")
+      })
+    }
   }
 
   return(
     <form>
         <label>Building:</label>
-        <select>
+        <select onChange = {(e)=>{setRevLocation(e.target.value)}}>
             <option value="Boelter Hall">Boelter Hall</option>
             <option value="Schoenberg Hall">Schoenberg Hall</option>
         </select>
@@ -30,6 +54,7 @@ const Form = () => {
             required
             name="rating"
             placeholder="Rating"
+            onChange = {(e)=>{setRevRating(e.target.value)}}
         />
         <br></br>
         <br></br>
@@ -44,7 +69,7 @@ const Form = () => {
         <br></br>
         <p>review: </p>
         <p>{formData.review}</p>
-        <button>Submit</button>
+        <button onClick = {submitReview}>Submit</button>
     </form>
   )
 }
