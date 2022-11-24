@@ -1,0 +1,12 @@
+.Timmy {
+    width: 60px;
+    right: 0px;
+    top: -1px;
+    position: absolute;
+}
+
+.Timmy:hover{
+    width: 100px;
+    transition: all 0.3s ease;
+    }
+    
