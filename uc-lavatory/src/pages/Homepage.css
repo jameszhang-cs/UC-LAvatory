@@ -10,3 +10,13 @@
     transition: all 0.3s ease;
     }
     
+.HeroImages {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    object-fit: cover;
+    opacity: 0.9;
+    filter: brightness(50%);
+}
