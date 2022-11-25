@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react'
 import './Form.css'
 import Axios from 'axios'
 
+const current = new Date();
+const date = `${current.getMonth()}.${current.getDate()}.${current.getFullYear()}`;
+
 const Form = () => {
   const [formData, setFormData]=useState({
     building: "",
@@ -43,7 +46,11 @@ const Form = () => {
         revGender: revGender,
         revFloor: revFloor,
         revRating: revRating, 
-        revBody: revBody
+        revBody: revBody,
+        revYear: current.getFullYear(),
+        revMonth: current.getMonth(),
+        revDay: current.getDate(),
+
       }).then(() => {
         alert("Success!")
       })

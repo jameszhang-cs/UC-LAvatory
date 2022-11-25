@@ -6,7 +6,7 @@ import ucla_cos from '../ucla_images/ucla_cos.jpg';
 import "./Homepage.css";
 
 const current = new Date();
-const date = `${current.getMonth()}.${current.getDate()+1}.${current.getFullYear()}`;
+const date = `${current.getMonth()}.${current.getDate()}.${current.getFullYear()}`;
 
 const Homepage = () => {
     return (
