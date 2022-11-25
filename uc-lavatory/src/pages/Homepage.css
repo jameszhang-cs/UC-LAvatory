@@ -70,6 +70,14 @@
 }
 
 .BannerText h2{
+    font-weight: normal;
+    font-size: 60px;
+    border: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+.BannerText h3{
     color: powderblue;
     font-size: 30px;
     font-style: italic;

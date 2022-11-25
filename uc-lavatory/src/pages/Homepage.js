@@ -5,13 +5,17 @@ import ucla_birdseye from '../ucla_images/ucla_birdseye.jpg';
 import ucla_cos from '../ucla_images/ucla_cos.jpg';
 import "./Homepage.css";
 
+const current = new Date();
+const date = `${current.getMonth()}.${current.getDate()+1}.${current.getFullYear()}`;
+
 const Homepage = () => {
     return (
         <div className = "Homepage">
             <div className="Banner">
                 <span className="BannerText">
                     <h1>UC-LAvatory</h1>
-                    <h2>Insert clever slogan here.</h2>
+                    <h2>{date}</h2>
+                    <h3>Insert clever slogan here.</h3>
                 </span>
                 <img className="HeroImage" src={ucla_royce} alt="Royce Hall" />
                 <img className="HeroImage" src={ucla_pritzker} alt="Pritzker Hall" />
