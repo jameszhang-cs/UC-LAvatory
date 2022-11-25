@@ -9,4 +9,77 @@
     width: 100px;
     transition: all 0.3s ease;
     }
-    
+
+.Homepage .Banner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-color: black;
+}
+
+.Banner .HeroImage{
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.Banner .HeroImage:nth-child(1) {
+    z-index: 4;
+    animation: fade 40s -0s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.Banner .HeroImage:nth-child(2) {
+    z-index: 3;
+    animation: fade 40s -10s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.Banner .HeroImage:nth-child(3) {
+    z-index: 2;
+    animation: fade 40s -20s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.Banner .HeroImage:nth-child(4){
+    z-index: 1;
+    animation: fade 40s -30s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.Banner .BannerText{
+    color: white;
+    z-index: 5;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+}
+
+.BannerText h1{
+    font-weight: bold;
+    font-size: 100px;
+    border: 2px;
+    margin: 0;
+    padding: 0;
+}
+
+.BannerText h2{
+    color: powderblue;
+    font-size: 30px;
+    font-style: italic;
+    margin: 0;
+}
+
+@keyframes fade {
+    0% {opacity: 1;}
+    17% {opacity: 1;}
+    25% {opacity: 0;}
+    92% {opacity: 0;}
+    100% {opacity: 1;}
+  }
