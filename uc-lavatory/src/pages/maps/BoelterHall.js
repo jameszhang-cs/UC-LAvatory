@@ -1,10 +1,22 @@
-import React from 'react';
+import Axios  from 'axios';
+import React, {useEffect, useState} from 'react';
 
 const BoelterHall = () => {
     const [value, setValue] = React.useState("floor1")
     const handleChange = (event) => (
         setValue(event.target.value)
     );
+
+    const [reviewList, setReviewList] = useState([])
+
+    useEffect(()=>{
+        Axios.get('http://localhost:5000/api/get/Boelter%20Hall').then((response) =>{
+            setReviewList(response.data)
+        })
+    }, [])
+
+
+
     return (
         <div>
             <h1>Boelter Hall Data</h1>
@@ -22,7 +34,10 @@ const BoelterHall = () => {
                     <option value = "floor9">Floor 9</option>
                 </select>
             </label>
-            <p>Will display data for {value} when this is finished.</p>
+            <p>Average: To be implemented</p>
+            {reviewList.map((val) =>{
+                return <h1>{val.revRating} stars: {val.revBody}</h1>
+            })}
         </div>
     );
 }

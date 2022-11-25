@@ -23,22 +23,35 @@ db.connect((err) =>{
   console.log('MySQL Connected');
 });
 
-app.get("/api/get", (req, res) => {
-  const sqlSelect = "SELECT * FROM reviews";
+app.get("/api/get/:id", (req, res) => {
+  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.id}"`;
   db.query(sqlSelect, (err, result) => {
+    if (err) throw err;
     res.send(result);
+    console.log(result);
+  });
+
+});
+
+app.get("/api/get/", (req, res) => {
+  const sqlSelect = `SELECT * FROM reviews`;
+  db.query(sqlSelect, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
   });
 
 });
 
 app.post("/api/insert", (req, res) =>{
   const revLocation = req.body.revLocation;
-  //const revTime = req.body.revTime;
+  const revGender = req.body.revGender;
+  const revFloor = req.body.revFloor;
   const revRating = req.body.revRating;
   const revBody = req.body.revBody;
   const sqlInsert = 
-  "INSERT INTO reviews (revLocation, revRating, revBody) VALUES (?,?,?)"
-  db.query(sqlInsert, [revLocation, revRating, revBody], (err, result) =>{
+  "INSERT INTO reviews (revLocation, revGender, revFloor, revRating, revBody) VALUES (?,?,?,?,?)"
+  db.query(sqlInsert, [revLocation, revGender, revFloor, revRating, revBody], (err, result) =>{
       if (err) throw err;
       console.log(result);
   });

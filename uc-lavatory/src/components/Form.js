@@ -19,6 +19,8 @@ const Form = () => {
   }
 
   const [revLocation, setRevLocation] = useState('')
+  const [revGender, setRevGender] = useState('')
+  const [revFloor, setRevFloor] = useState('')
   const [revRating, setRevRating] = useState('')
   const [revBody, setRevBody] = useState('')
 
@@ -29,9 +31,17 @@ const Form = () => {
     else if (revBody.length === 0){
       alert("Review has been left blank!")
     }
+    else if (revLocation.length === 0){
+      alert("Please select a building.")
+    }
+    else if (revGender.length === 0){
+      alert("Please select a building.")
+    }
     else{
       Axios.post('http://localhost:5000/api/insert', {
         revLocation: revLocation, 
+        revGender: revGender,
+        revFloor: revFloor,
         revRating: revRating, 
         revBody: revBody
       }).then(() => {
@@ -44,9 +54,28 @@ const Form = () => {
     <form>
         <label>Building:</label>
         <select onChange = {(e)=>{setRevLocation(e.target.value)}}>
+            <option value = "">Select Building:</option>
             <option value="Boelter Hall">Boelter Hall</option>
             <option value="Schoenberg Hall">Schoenberg Hall</option>
         </select>
+        <br></br>
+        <br></br>
+        <label>Gender:</label>
+        <select onChange = {(e)=>{setRevGender(e.target.value)}}>
+            <option value = "">Select Gender:</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+        <br></br>
+        <br></br>
+        <label>Floor:</label>
+        <input
+            required
+            name="floor"
+            placeholder="Floor"
+            onChange = {(e)=>{setRevFloor(e.target.value)}}
+        />
         <br></br>
         <br></br>
         <label>Rating:</label>
