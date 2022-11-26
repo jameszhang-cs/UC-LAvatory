@@ -3,12 +3,12 @@ import Axios  from 'axios';
 
 function SortReviews(props){
   //GenderFilter stuff
-  const [ filteredGender, genderToFilter ] = React.useState("Male");
+  const [ filteredGender, genderToFilter ] = React.useState("All genders");
   const handleGender = (event) => {
     genderToFilter(event.target.value);
   }
   //FloorSelect stuff
-  const [floorToDisplay, changeFloor ] = React.useState(1);
+  const [floorToDisplay, changeFloor ] = React.useState(0);
   const handleFloor = (event) => {
     changeFloor(event.target.value);
   }
@@ -42,6 +42,7 @@ function GenderFilter(props){
     <div>
       <label>Select a gender.{" "}</label>
       <select onChange = {props.handleGender}>
+        <option value = "All genders">Show all genders</option>
         <option value = "Male">Male</option>
         <option value = "Female">Female</option>
         <option value = "Unisex">Unisex</option>
@@ -56,17 +57,31 @@ function DisplayReviews(props){
             return <h1>Average Rating: {val['avg(revRating)']}</h1>
         })}
         {props.reviewList.map((val) => {
-            if ((val.revFloor === props.floorToDisplay)){ 
-              if (val.revGender === props.filteredGender){
-                return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-              }
+          if (props.floorToDisplay === '0'){
+            if (props.filteredGender === "All genders")
+              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
+            else if (val.revGender === props.filteredGender){
+              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
             }
+          }
+          else if ((val.revFloor === props.floorToDisplay)){ 
+            if (val.revGender === props.filteredGender){
+              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
+            }
+            else if (props.filteredGender === "All genders"){
+              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
+            }
+          }
         })}
     </div>
   )
 }
 function FloorSelect(props) {
   var arr = Array(1);
+  var obj = {}
+  obj["value"] = 0;
+  obj["text"] = "Show all floors";
+  arr.push(obj);
   for (var i = 0; i < props.floors; i++){
       var obj = {};
       obj["value"] = (i + 1);
