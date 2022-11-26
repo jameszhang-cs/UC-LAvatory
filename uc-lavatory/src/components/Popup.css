@@ -15,12 +15,21 @@
     position: relative;
     padding: 32px;
     width: 100%;
-    max-width: 720px;
-    background-color: #FFF;
+    max-width: 600px;
+    background-color:white;
+    border-radius: 16px;
+    height: 80%;
+    overflow: auto;
 }
 
 .popup-inner .close-button {
     position: absolute;
     top: 16px;
     right: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+.popup-inner h1{
+    font-family: Century Gothic;
 }
