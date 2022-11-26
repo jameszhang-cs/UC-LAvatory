@@ -1,10 +1,11 @@
 import React from 'react';
-import FloorSelect from './GenericHall';
+import GenericHall from './GenericHall';
 
 const SchoenbergHall = () => {
     return (
         <div>
-            <FloorSelect floors={2}></FloorSelect>
+            <GenericHall.FloorSelect floors={2}></GenericHall.FloorSelect>
+            <GenericHall.DisplayReviews hall = {'Schoenberg Hall'}></GenericHall.DisplayReviews>
         </div>
     );
 }
