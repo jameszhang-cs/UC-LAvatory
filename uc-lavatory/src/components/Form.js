@@ -28,10 +28,12 @@ const Form = () => {
   const [revBody, setRevBody] = useState('')
 
   const submitReview = () =>{
-    if (revRating.length === 0){
+    /*
+    if (revRating.value === 0){
       alert("Rating has been left blank!")
     }
-    else if (revBody.length === 0){
+    */
+    if (revBody.length === 0){
       alert("Review has been left blank!")
     }
     else if (revLocation.length === 0){
@@ -82,6 +84,7 @@ const Form = () => {
         <label>Rating: </label>
         <input
             required
+            min={1}
             max={5}
             type="range"
             name="rating"
