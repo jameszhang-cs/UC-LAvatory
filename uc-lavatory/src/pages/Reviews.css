@@ -1,0 +1,91 @@
+body {
+    margin:0;
+}
+
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    height: 100vh;
+    padding: 5px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+}
+  
+.column.side {
+    width: 25%;
+    border-right-width: 2.5px;
+    background-color: rgb(201, 230, 249);
+}
+  
+.column.middle {
+    width: 72.5%;
+    border-left-width: 2.5px;
+    background-color: rgb(255, 254, 227);
+}
+
+.column h1 {
+    font-family: Century Gothic;
+    font-weight: bold;
+    font-size: 45px;
+    margin: 10px;
+    text-align: center;
+    color: black;
+}
+
+.column p{
+    text-align: center;
+    font-family: Gill Sans, sans-serif;
+    font-size: 20px;
+}
+
+button {
+    background-color: gray;
+    border-radius: 5px;
+
+    color: white;
+    padding: 15px 28px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Gill Sans, sans-serif;
+  }
+
+  .polaroid{
+    float:left;
+    width: 300px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 15px;
+  }
+
+  .polaroid img{
+    width:100%;
+    object-fit: cover;
+    height:auto;
+  }
+
+  .caption {
+    text-align: center;
+    padding: 10px 20px;
+  }
+
+  a:link{
+    font-family: Gill Sans, sans-serif;
+  }
+
+@media screen and (max-width:1000px) {
+    .column.side {
+      width: 100%;
+    }
+    .column.middle {
+        width: 100%;
+      }
+  }
