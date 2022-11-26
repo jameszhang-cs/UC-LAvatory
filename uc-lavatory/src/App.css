@@ -17,8 +17,9 @@
 }
 
 .App .Navbar{
-  background-color: #333;
+  background-color: #2F3034;
   overflow: hidden;
+  width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -26,9 +27,20 @@
   float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
+  font-family: Gill Sans, sans-serif;
+}
+
+.Navbar b{
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 30px;
+  font-family: Century Gothic;
+  font-weight: bold;
 }
 
 /* Change the color of links on hover */

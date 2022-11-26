@@ -8,6 +8,7 @@ function App() {
         <a href = "http://localhost:3000"> Home</a>
         <a href = "http://localhost:3000/map"> Map</a>
         <a href = "http://localhost:3000/reviews"> Reviews</a>
+        <b>UC-LAvatory</b>
       </div>
       <AppRouter />
     </div>
