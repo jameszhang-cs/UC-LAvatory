@@ -26,17 +26,42 @@ function SortReviews(props){
     })
       // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
-
+  //SortOptions stuff
+  const [ sortChoice, chooseSort ] = React.useState("ratinga");
+  const handleSort = (event) => {
+    chooseSort (event.target.value);
+  }
+  var listToUse = [];
+  switch(sortChoice){
+    case "ratinga":
+      listToUse = [...reviewList].sort((a, b) => a.revRating - b.revRating);
+      break;
+    case "ratingd":
+      listToUse = [...reviewList].sort((a, b) => b.revRating - a.revRating);
+      break;
+  }
   return (
     <div>
       <h1>{props.hall}</h1>
+      <h1>{sortChoice}</h1>
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
-      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {reviewList} ></DisplayReviews>
+      <SortOptions sortChoice = {sortChoice} handleSort = {handleSort}></SortOptions>
+      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {listToUse} ></DisplayReviews>
     </div>
   );
 };
-
+function SortOptions(props){
+  return (
+    <div>
+      <label>Sort By: {" "}</label>
+      <select onChange = {props.handleSort}>
+        <option value = "ratinga">Rating (ascending)</option>
+        <option value = "ratingd">Rating (descending)</option>
+      </select>
+    </div>
+  )
+}
 function GenderFilter(props){
   return (
     <div>
@@ -56,6 +81,7 @@ function DisplayReviews(props){
       {props.ratingAvg.map((val) =>{
             return <h1>Average Rating: {val['avg(revRating)']}</h1>
         })}
+        {/* eslint-disable-next-line */}
         {props.reviewList.map((val) => {
           if (props.floorToDisplay === '0'){
             if (props.filteredGender === "All genders")
@@ -78,10 +104,10 @@ function DisplayReviews(props){
 }
 function FloorSelect(props) {
   var arr = Array(1);
-  var obj = {}
-  obj["value"] = 0;
-  obj["text"] = "Show all floors";
-  arr.push(obj);
+  var obj1 = {}
+  obj1["value"] = 0;
+  obj1["text"] = "Show all floors";
+  arr.push(obj1);
   for (var i = 0; i < props.floors; i++){
       var obj = {};
       obj["value"] = (i + 1);
