@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios  from 'axios';
+
 function DisplayReviews(props) {
   const [reviewList, setReviewList] = useState([])
   const [ratingAvg, setRatingAvg] = useState([])
@@ -28,8 +29,25 @@ function DisplayReviews(props) {
     </div>
 );
 }
-function FloorSelect(props) {
+function SortReviews(props){
+  const [floorToDisplay, changeFloor ] = React.useState(1);
+  const handleFloor = (event) => {
+    changeFloor(event.target.value);
+  }
+  
+  return (
+    <div>
+      <h1>{floorToDisplay}</h1>
+      <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
+    </div>
+  );
+};
+
+/*function FloorSelect(props) {
   const [floorToDisplay, changeFloor ] = React.useState(0);
+  const handleFloor = event => {
+    changeFloor(event.target.value);
+  }
   var arr = Array(1);
   for (var i = 0; i < props.floors; i++){
       var obj = {};
@@ -41,15 +59,8 @@ function FloorSelect(props) {
     return (
       <div>
           <h1 >Floor: {floorToDisplay}</h1>
-          <h1>Top Restrooms in this Hall</h1>
-              <label>Sort reviews for this restroom by: {" "}</label>
-              <select>
-                  <option value = "time">time</option>
-                  <option value = "helpfulness">helpfulness</option>
-              </select>
-              <br></br>
           <label>Please select floor. {" "}</label>
-        <select name = "floorToDisplay" onChange = {e => changeFloor(e.target.value)}>
+        <select name = "floorToDisplay" onChange = {handleFloor}>
           {arr.map((option, index) => (
             <option key={index} value={option.value}>
               {option.text}
@@ -58,10 +69,30 @@ function FloorSelect(props) {
         </select>
       </div>
     );
+};*/
+function FloorSelect(props) {
+  var arr = Array(1);
+  for (var i = 0; i < props.floors; i++){
+      var obj = {};
+      obj["value"] = (i + 1);
+      obj["text"] = "Floor " + (i + 1);
+      arr.push(obj);
+  }
+  return (
+    <div>
+      <label>Please select floor. {" "}</label>
+      <select onChange = {props.handleFloor}>
+        {arr.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.text}
+          </option>
+        ))}
+        </select>
+  </div>
+  )
 };
-
 const GenericHall = {
-  FloorSelect,
   DisplayReviews,
+  SortReviews,
 }
 export default GenericHall

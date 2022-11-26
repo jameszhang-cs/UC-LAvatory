@@ -4,7 +4,7 @@ import GenericHall from './GenericHall';
 const BoelterHall = () => {
     return (
         <div>
-            <GenericHall.FloorSelect floors={9}></GenericHall.FloorSelect>
+            <GenericHall.SortReviews floors={9}></GenericHall.SortReviews>
             <GenericHall.DisplayReviews hall = {'Boelter Hall'}></GenericHall.DisplayReviews>
         </div>
     );
