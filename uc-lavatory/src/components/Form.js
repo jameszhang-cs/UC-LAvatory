@@ -59,33 +59,27 @@ const Form = () => {
 
   return(
     <form>
-        <label>Building:</label>
+        <label>Building: </label>
         <select onChange = {(e)=>{setRevLocation(e.target.value)}}>
             <option value = "">Select Building:</option>
             <option value="Boelter Hall">Boelter Hall</option>
             <option value="Schoenberg Hall">Schoenberg Hall</option>
         </select>
-        <br></br>
-        <br></br>
-        <label>Gender:</label>
+        <label>Gender: </label>
         <select onChange = {(e)=>{setRevGender(e.target.value)}}>
             <option value = "">Select Gender:</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Unisex">Unisex</option>
         </select>
-        <br></br>
-        <br></br>
-        <label>Floor:</label>
+        <label>Floor: </label>
         <input
             required
             name="floor"
             placeholder="Floor"
             onChange = {(e)=>{setRevFloor(e.target.value)}}
         />
-        <br></br>
-        <br></br>
-        <label>Rating:</label>
+        <label>Rating: </label>
         <input
             required
             max={5}
@@ -94,18 +88,14 @@ const Form = () => {
             placeholder="Rating"
             onChange = {(e)=>{setRevRating(e.target.value)}}
         />
-        <br></br>
-        <br></br>
-        <label>Review:</label>
-        <input
+        <label>Review: </label>
+        <textarea
             name="review"
             placeholder="Review"
             value={formData.review}
             onChange={handleChange}
         />
-        <br></br>
-        <br></br>
-        <p>review: </p>
+        <p><u>Confirm Review: </u></p>
         <p>{formData.review}</p>
         <button onClick = {submitReview}>Submit</button>
     </form>

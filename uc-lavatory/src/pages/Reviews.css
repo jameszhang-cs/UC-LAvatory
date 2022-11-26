@@ -44,12 +44,12 @@ body {
     font-size: 20px;
 }
 
-button {
+.column.side button {
     background-color: gray;
     border-radius: 5px;
 
     color: white;
-    padding: 15px 28px;
+    padding: 12px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
