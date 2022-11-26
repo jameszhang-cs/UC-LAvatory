@@ -11,7 +11,7 @@ const db = mysql.createConnection( {
   database: 'project'
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
@@ -40,8 +40,19 @@ app.get("/api/get/", (req, res) => {
     res.send(result);
     console.log(result);
   });
-
 });
+
+app.get("/api/average/:loc", (req, res) =>{
+  const sqlSelect = `SELECT avg(revRating) FROM reviews WHERE revLocation = "${req.params.loc}"`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+})
+
+
+
 
 app.post("/api/insert", (req, res) =>{
   const revLocation = req.body.revLocation;
@@ -49,9 +60,10 @@ app.post("/api/insert", (req, res) =>{
   const revFloor = req.body.revFloor;
   const revRating = req.body.revRating;
   const revBody = req.body.revBody;
+  const revTime = req.body.revMonth + "/" + req.body.revDay + "/" + req.body.revYear;
   const sqlInsert = 
-  "INSERT INTO reviews (revLocation, revGender, revFloor, revRating, revBody) VALUES (?,?,?,?,?)"
-  db.query(sqlInsert, [revLocation, revGender, revFloor, revRating, revBody], (err, result) =>{
+  "INSERT INTO reviews (revLocation, revTime, revGender, revFloor, revRating, revBody) VALUES (?,?,?,?,?,?)"
+  db.query(sqlInsert, [revLocation, revTime, revGender, revFloor, revRating, revBody], (err, result) =>{
       if (err) throw err;
       console.log(result);
   });
