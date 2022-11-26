@@ -41,7 +41,7 @@ const Form = () => {
       alert("Please select a building.")
     }
     else{
-      Axios.post('http://localhost:5000/api/insert', {
+      Axios.post('http://localhost:3001/api/insert', {
         revLocation: revLocation, 
         revGender: revGender,
         revFloor: revFloor,

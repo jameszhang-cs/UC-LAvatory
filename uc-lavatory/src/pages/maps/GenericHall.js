@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Axios  from 'axios';
 function DisplayReviews(props) {
   const [reviewList, setReviewList] = useState([])
-  var hallName = 'http://localhost:5000/api/get/' + props.hall.replace(" ", "%20");
+  var hallName = 'http://localhost:3001/api/get/' + props.hall.replace(" ", "%20");
   useEffect(()=>{
       Axios.get(hallName).then((response) =>{
           setReviewList(response.data)
