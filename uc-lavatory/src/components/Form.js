@@ -49,7 +49,7 @@ const Form = () => {
         revBody: revBody,
         revYear: current.getFullYear(),
         revMonth: current.getMonth(),
-        revDay: current.getDate(),
+        revDay: current.getDate()
 
       }).then(() => {
         alert("Success!")
