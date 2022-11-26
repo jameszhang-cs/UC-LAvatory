@@ -88,6 +88,8 @@ const Form = () => {
         <label>Rating:</label>
         <input
             required
+            max={5}
+            type="range"
             name="rating"
             placeholder="Rating"
             onChange = {(e)=>{setRevRating(e.target.value)}}
