@@ -15,7 +15,7 @@ const Homepage = () => {
                 <span className="BannerText">
                     <h1>UC-LAvatory</h1>
                     <h2>{date}</h2>
-                    <h3>Insert clever slogan here.</h3>
+                    <h3>The #1 site for your #1 and #2 needs.</h3>
                 </span>
                 <img className="HeroImage" src={ucla_royce} alt="Royce Hall" />
                 <img className="HeroImage" src={ucla_pritzker} alt="Pritzker Hall" />

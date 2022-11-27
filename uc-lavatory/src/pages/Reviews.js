@@ -14,7 +14,7 @@ const HomePage = () => {
         <body>
             <div className="row">
                 <div className="column side">
-                        <h1>UC-Lavatory</h1>
+                        <h1>UC-LAvatory</h1>
                         <p>Visit a restroom recently?</p>
                         <p>Feel strongly about your pee and/or poo?</p>
                         <p><b>Click the button below to tell the world how you feel!</b></p>
