@@ -15,6 +15,7 @@ function SortReviews(props){
   //DisplayReviews stuff 
   const [reviewList, setReviewList] = useState([])
   const [ratingAvg, setRatingAvg] = useState([])
+
   var hallName = 'http://localhost:3001/api/get/' + props.hall.replace(" ", "%20");
   var averages = 'http://localhost:3001/api/average/' + props.hall.replace(" ", "%20");
   useEffect(()=>{
@@ -32,7 +33,7 @@ function SortReviews(props){
       <h1>{props.hall}</h1>
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
-      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {reviewList} ></DisplayReviews>
+      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {reviewList} displayList></DisplayReviews>
     </div>
   );
 };
@@ -50,6 +51,7 @@ function GenderFilter(props){
     </div>
   )
 }
+
 function DisplayReviews(props){
   return (
     <div>
@@ -58,9 +60,10 @@ function DisplayReviews(props){
         })}
         {props.reviewList.map((val) => {
           if (props.floorToDisplay === '0'){
-            if (props.filteredGender === "All genders")
+            if (props.filteredGender === "All genders") {
+              props.displayList.push(val)
               return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-            else if (val.revGender === props.filteredGender){
+            } else if (val.revGender === props.filteredGender){
               return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
             }
           }
