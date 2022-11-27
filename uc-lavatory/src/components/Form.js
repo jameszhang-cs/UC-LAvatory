@@ -24,7 +24,7 @@ const Form = () => {
   const [revLocation, setRevLocation] = useState('')
   const [revGender, setRevGender] = useState('')
   const [revFloor, setRevFloor] = useState('')
-  const [revRating, setRevRating] = useState('')
+  const [revRating, setRevRating] = useState('3')
   const [revBody, setRevBody] = useState('')
 
   const submitReview = () =>{
