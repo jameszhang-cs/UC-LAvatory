@@ -15,3 +15,7 @@ Required packages for react and how to install them:
 'npm install leaflet'
 'npm install react-router-dom'
 'npm install axios'
+
+if on MacOS and nodemon does not work:
+'npm install mysql'
+'npm install cors'

@@ -42,6 +42,33 @@ app.get("/api/get/", (req, res) => {
   });
 });
 
+app.get("/api/get/:gen/:loc", (req, res) =>{
+  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.loc}" AND revGender = "${req.params.gen}"`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+})
+
+app.get("/api/get/:floor/:loc", (req, res) =>{
+  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.loc}" AND revFloor = "${req.params.floor}"`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+})
+
+app.get("/api/get/:gen/:floor/:loc", (req, res) =>{
+  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.loc}" AND revGender = "${req.params.gen}" AND revFloor = "${req.params.floor}"`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+})
+
 app.get("/api/average/:loc", (req, res) =>{
   const sqlSelect = `SELECT avg(revRating) FROM reviews WHERE revLocation = "${req.params.loc}"`;
   db.query(sqlSelect, (err, result)=>{
