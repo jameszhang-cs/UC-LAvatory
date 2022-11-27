@@ -46,11 +46,13 @@ function SortReviews(props){
     case "timed":
       listToUse = [...reviewList].sort((a, b) => new Date(b.revTime).getTime() - new Date(a.revTime).getTime());
       break;
+    default:
+      listToUse = reviewList;
+      break;
   }
   return (
     <div>
       <h1>{props.hall}</h1>
-      <h1>{sortChoice}</h1>
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
       <SortOptions sortChoice = {sortChoice} handleSort = {handleSort}></SortOptions>
@@ -95,7 +97,8 @@ function DisplayReviews(props){
         {props.reviewList.map((val) => {
           if (props.floorToDisplay === '0'){
             if (props.filteredGender === "All genders") {
-              props.displayList.push(val)
+              //This line was buggy for some reason, so I commented it out. 
+              //props.displayList.push(val)
               return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
             } else if (val.revGender === props.filteredGender){
               return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
