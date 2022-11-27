@@ -10,7 +10,7 @@
     transition: all 0.3s ease;
     }
 
-.Homepage .Banner{
+.Banner{
     display: flex;
     align-items: center;
     width: 100%;
@@ -90,4 +90,14 @@
     25% {opacity: 0;}
     92% {opacity: 0;}
     100% {opacity: 1;}
+  }
+
+  h1{
+    font-family: Century Gothic;
+  }
+
+  p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+
   }
