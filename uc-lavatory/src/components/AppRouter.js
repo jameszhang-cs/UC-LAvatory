@@ -5,6 +5,7 @@ import Map from '../pages/Map'
 import Reviews from '../pages/Reviews'
 import SchoenbergHall from '../pages/maps/SchoenbergHall'
 import BoelterHall from '../pages/maps/BoelterHall'
+import Premium from '../pages/Premium'
 function AppRouter() {
     return (
         <BrowserRouter>
@@ -23,6 +24,9 @@ function AppRouter() {
                 } />
                 <Route path = "/boelterhall" element = {
                     <BoelterHall />
+                } />
+                <Route path = "/premium" element = {
+                    <Premium />
                 } />
             </Routes>
 
