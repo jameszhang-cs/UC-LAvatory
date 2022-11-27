@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Axios  from 'axios';
+import './GenericHall.css'
 
 function SortReviews(props){
   //GenderFilter stuff
@@ -8,7 +9,7 @@ function SortReviews(props){
     genderToFilter(event.target.value);
   }
   //FloorSelect stuff
-  const [floorToDisplay, changeFloor ] = React.useState(0);
+  const [floorToDisplay, changeFloor ] = React.useState('0');
   const handleFloor = (event) => {
     changeFloor(event.target.value);
   }
@@ -56,7 +57,7 @@ function SortReviews(props){
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
       <SortOptions sortChoice = {sortChoice} handleSort = {handleSort}></SortOptions>
-      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {listToUse} displayList></DisplayReviews>
+      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {listToUse}></DisplayReviews>
     </div>
   );
 };
@@ -88,31 +89,59 @@ function GenderFilter(props){
 }
 
 function DisplayReviews(props){
+  const [selected, setSelected]=useState()
+  const toggle = (val) => {
+    if (selected===val) {
+      return setSelected(null)
+    }
+    setSelected(val)
+  }
+
+  var displayList=[]
+  if (props.floorToDisplay === '0') {
+    if (props.filteredGender === "All genders") {
+      displayList=[...props.reviewList];
+    } else {
+      props.reviewList.forEach((val) => {
+        if (val.revGender === props.filteredGender){
+          displayList.push(val);
+        }
+      })
+    }
+  } else if (props.filteredGender === "All genders") {
+    props.reviewList.forEach((val) => {
+      if (val.revFloor === props.floorToDisplay){
+        displayList.push(val);
+      }
+    })
+  } else {
+    props.reviewList.forEach((val) => {
+      if (val.revFloor === props.floorToDisplay){
+        if (val.revGender === props.filteredGender) {
+          displayList.push(val);
+        }
+      }
+    })
+  }
   return (
-    <div>
-      {props.ratingAvg.map((val) =>{
-            return <h1>Average Rating: {val['avg(revRating)']}</h1>
-        })}
-        {/* eslint-disable-next-line */}
-        {props.reviewList.map((val) => {
-          if (props.floorToDisplay === '0'){
-            if (props.filteredGender === "All genders") {
-              //This line was buggy for some reason, so I commented it out. 
-              //props.displayList.push(val)
-              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-            } else if (val.revGender === props.filteredGender){
-              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-            }
-          }
-          else if ((val.revFloor === props.floorToDisplay)){ 
-            if (val.revGender === props.filteredGender){
-              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-            }
-            else if (props.filteredGender === "All genders"){
-              return <h1>{val.revRating} stars: {val.revBody} time: {val.revTime} gender: {val.revGender} floor: {val.revFloor}</h1>
-            }
-          }
-        })}
+    <div className='wrapper'>
+      <div className='accordion'>
+        {displayList.map((val) => (
+              <div className='review'>
+              <div className='banner' onClick={ ()=> toggle(val)}>
+                <h1>{val.revRating} stars: {val.revGender} washroom on floor {val.revFloor}</h1>
+                <span>
+                  {selected === val ? '-' : '+'}
+                </span>
+              </div>
+              <div className={selected === val ? 'body show' : 'body'}>
+                {val.revBody}
+                <br></br>
+                reviewed on {val.revTime}
+              </div>
+            </div>
+        ))}
+      </div>
     </div>
   )
 }
