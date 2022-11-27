@@ -3,12 +3,16 @@ import Popup from '../components/Popup';
 import { useState } from 'react'
 import Form from '../components/Form';
 import "./Reviews.css"
-
 import boelter from '../ucla_images/boelter.jpg';
 import schoenberg from '../ucla_images/schoenberg.jpg';
+import flush from '../soundeffects/flushed.mp3';
 
-
+let audio = new Audio(flush);
 const HomePage = () => {
+    const handleClick = () => {
+        audio.play();
+        setButtonPopup(true);
+    }
     const [buttonPopup, setButtonPopup] = useState(false);
     return (
         <body>
@@ -19,7 +23,7 @@ const HomePage = () => {
                         <p>Feel strongly about your pee and/or poo?</p>
                         <p><b>Click the button below to tell the world how you feel!</b></p>
                         <br></br>
-                        <button onClick={() => setButtonPopup(true)}>Submit a Review!</button>   
+                        <button onClick={handleClick}>Submit a Review!</button>   
                 </div>
                 <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                     <Form></Form>
