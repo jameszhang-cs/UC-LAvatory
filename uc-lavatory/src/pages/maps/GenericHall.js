@@ -39,6 +39,12 @@ function SortReviews(props){
     case "ratingd":
       listToUse = [...reviewList].sort((a, b) => b.revRating - a.revRating);
       break;
+    case "timea":
+      listToUse = [...reviewList].sort((a, b) => new Date(a.revTime).getTime() - new Date(b.revTime).getTime());
+      break;
+    case "timed":
+      listToUse = [...reviewList].sort((a, b) => new Date(b.revTime).getTime() - new Date(a.revTime).getTime());
+      break;
   }
   return (
     <div>
@@ -58,6 +64,8 @@ function SortOptions(props){
       <select onChange = {props.handleSort}>
         <option value = "ratinga">Rating (ascending)</option>
         <option value = "ratingd">Rating (descending)</option>
+        <option value = "timea">Time (ascending)</option>
+        <option value = "timed">Time (descending)</option>
       </select>
     </div>
   )
