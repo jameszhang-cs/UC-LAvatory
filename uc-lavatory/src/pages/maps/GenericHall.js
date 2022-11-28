@@ -57,7 +57,8 @@ function SortReviews(props){
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
       <SortOptions sortChoice = {sortChoice} handleSort = {handleSort}></SortOptions>
-      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} ratingAvg = {ratingAvg} reviewList = {listToUse}></DisplayReviews>
+      <DisplayAverage ratingAvg = {ratingAvg}></DisplayAverage>
+      <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} reviewList = {listToUse}></DisplayReviews>
     </div>
   );
 };
@@ -88,6 +89,16 @@ function GenderFilter(props){
   )
 }
 
+function DisplayAverage(props) {
+  return (
+    <h3>
+        {props.ratingAvg.map((val) =>{
+            return <h1>Average Rating of All Reviews: {val['avg(revRating)']}</h1>
+        })}
+    </h3>
+  )
+}
+
 function DisplayReviews(props){
   const [selected, setSelected]=useState()
   const toggle = (val) => {
@@ -96,8 +107,7 @@ function DisplayReviews(props){
     }
     setSelected(val)
   }
-
-  var displayList=[]
+  var displayList=[];
   if (props.floorToDisplay === '0') {
     if (props.filteredGender === "All genders") {
       displayList=[...props.reviewList];
