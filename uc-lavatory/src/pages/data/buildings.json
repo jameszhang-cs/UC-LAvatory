@@ -30,6 +30,58 @@
           "type": "Point",
           "coordinates": [34.07078284115593, -118.44014195943461]
         }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 876,
+          "NAME": "Mathematical Sciences",
+          "id": "mathematicalsciences",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.069663811002926, -118.44253953717362]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 877,
+          "NAME": "Pritzker Hall",
+          "id": "pritzkerhall",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.069777,-118.440757]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 878,
+          "NAME": "Geology",
+          "id": "geology",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.069225,-118.441359]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 879,
+          "NAME": "Young Hall",
+          "id": "younghall",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.068531,-118.441315]
+        }
       }
     ]
   }

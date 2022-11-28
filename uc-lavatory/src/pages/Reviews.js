@@ -3,9 +3,13 @@ import Popup from '../components/Popup';
 import { useState } from 'react'
 import Form from '../components/Form';
 import "./Reviews.css"
+import flush from '../soundeffects/flushed.mp3';
 import boelter from '../ucla_images/boelter.jpg';
 import schoenberg from '../ucla_images/schoenberg.jpg';
-import flush from '../soundeffects/flushed.mp3';
+import matsci from '../ucla_images/mathematicalsciences.jpg';
+import pritzker from '../ucla_images/ucla_pritzker.jpg';
+import geology from '../ucla_images/geology.jpg';
+import younghall from '../ucla_images/younghall.jpg';
 
 let audio = new Audio(flush);
 const HomePage = () => {
@@ -41,6 +45,30 @@ const HomePage = () => {
                         <img src={schoenberg} alt="Schoenberg Hall" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/schoenberghall">Schoenberg Hall</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={matsci} alt="Mathematical Sciences" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/mathematicalsciences">Mathematical Sciences Building</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={pritzker} alt="Pritzker Hall" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/pritzkerhall">Pritzker Hall</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={geology} alt="Geology" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/geology">Geology</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={younghall} alt="Young Hall" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/younghall">Young Hall</a>
                         </div>
                     </div>
                      </ul>  

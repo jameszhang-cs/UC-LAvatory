@@ -5,6 +5,11 @@ import Map from '../pages/Map'
 import Reviews from '../pages/Reviews'
 import SchoenbergHall from '../pages/maps/SchoenbergHall'
 import BoelterHall from '../pages/maps/BoelterHall'
+import MathematicalSciences from '../pages/maps/MathematicalSciences'
+import PritzkerHall from '../pages/maps/PritzkerHall'
+import Geology from '../pages/maps/Geology'
+import YoungHall from '../pages/maps/YoungHall'
+
 function AppRouter() {
     return (
         <BrowserRouter>
@@ -23,6 +28,18 @@ function AppRouter() {
                 } />
                 <Route path = "/boelterhall" element = {
                     <BoelterHall />
+                } />
+                <Route path = "/mathematicalsciences" element = {
+                    <MathematicalSciences />
+                } />
+                <Route path = "/pritzkerhall" element = {
+                    <PritzkerHall />
+                } />
+                <Route path = "/geology" element = {
+                    <Geology />
+                } />
+                <Route path = "/younghall" element = {
+                    <YoungHall />
                 } />
             </Routes>
 
