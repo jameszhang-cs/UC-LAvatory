@@ -1,13 +1,13 @@
 body {
     margin:0;
     min-height: 100%;
-    background-color: rgb(201, 230, 249);
 }
 
 .row::after {
     content: "";
     display: table;
     clear: both;
+    background-color: rgb(201, 230, 249);
 }
 
 .column {
