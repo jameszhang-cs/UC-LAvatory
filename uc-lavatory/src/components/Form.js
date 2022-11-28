@@ -70,6 +70,9 @@ const Form = () => {
             <option value="Pritzker Hall">Pritzker Hall</option>
             <option value="Geology">Geology</option>
             <option value="Young Hall">Young Hall</option>
+            <option value="Engineering IV">Engineering IV</option>
+            <option value="Engineering V">Engineering V</option>
+            <option value="Engineering VI">Engineering VI</option>
         </select>
         <label>Gender: </label>
         <select onChange = {(e)=>{setRevGender(e.target.value)}}>

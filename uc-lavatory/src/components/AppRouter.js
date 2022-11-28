@@ -9,6 +9,9 @@ import MathematicalSciences from '../pages/maps/MathematicalSciences'
 import PritzkerHall from '../pages/maps/PritzkerHall'
 import Geology from '../pages/maps/Geology'
 import YoungHall from '../pages/maps/YoungHall'
+import EngineeringIV from '../pages/maps/EngineeringVI'
+import EngineeringV from '../pages/maps/EngineeringVI'
+import EngineeringVI from '../pages/maps/EngineeringVI'
 
 function AppRouter() {
     return (
@@ -40,6 +43,15 @@ function AppRouter() {
                 } />
                 <Route path = "/younghall" element = {
                     <YoungHall />
+                } />
+                <Route path = "/engineeringiv" element = {
+                    <EngineeringIV />
+                } />
+                <Route path = "/engineeringv" element = {
+                    <EngineeringV />
+                } />
+                <Route path = "/engineeringvi" element = {
+                    <EngineeringVI />
                 } />
             </Routes>
 

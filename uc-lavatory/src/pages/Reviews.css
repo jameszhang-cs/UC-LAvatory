@@ -1,5 +1,7 @@
 body {
     margin:0;
+    min-height: 100%;
+    background-color: rgb(201, 230, 249);
 }
 
 .row::after {
@@ -11,22 +13,18 @@ body {
 .column {
     float: left;
     height: 100vh;
-    padding: 5px;
-    border-style: solid;
-    border-width: 5px;
-    border-color: white;
 }
   
 .column.side {
     width: 25%;
-    border-right-width: 2.5px;
     background-color: rgb(201, 230, 249);
+    padding: 5px;
 }
   
 .column.middle {
-    width: 72.5%;
-    border-left-width: 2.5px;
+    width: 74.3%;
     background-color: rgb(255, 254, 227);
+    height: 100%;
 }
 
 .column h1 {

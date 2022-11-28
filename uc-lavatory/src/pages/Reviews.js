@@ -10,6 +10,9 @@ import matsci from '../ucla_images/mathematicalsciences.jpg';
 import pritzker from '../ucla_images/ucla_pritzker.jpg';
 import geology from '../ucla_images/geology.jpg';
 import younghall from '../ucla_images/younghall.jpg';
+import eiv from '../ucla_images/engineeringiv.jpg';
+import ev from '../ucla_images/engineeringv.jpg';
+import evi from '../ucla_images/engineeringvi.jpg';
 
 let audio = new Audio(flush);
 const HomePage = () => {
@@ -27,7 +30,7 @@ const HomePage = () => {
                         <p>Feel strongly about your pee and/or poo?</p>
                         <p><b>Click the button below to tell the world how you feel!</b></p>
                         <br></br>
-                        <button onClick={handleClick}>Submit a Review!</button>   
+                        <button onClick={handleClick}>Submit a Review!</button>
                 </div>
                 <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
                     <Form></Form>
@@ -42,11 +45,29 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className='polaroid'>
-                        <img src={schoenberg} alt="Schoenberg Hall" />
+                        <img src={eiv} alt="Engineering IV" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/schoenberghall">Schoenberg Hall</a>
+                            <a href = "http://localhost:3000/engineeringiv">Engineering IV</a>
                         </div>
                     </div>
+                    <div className='polaroid'>
+                        <img src={ev} alt="Engineering V" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/engineeringv">Engineering V</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={eiv} alt="Engineering VI" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/engineeringvi">Engineering VI</a>
+                        </div>
+                    </div>
+                    <div className='polaroid'>
+                        <img src={geology} alt="Geology" />
+                        <div className='caption'>
+                            <a href = "http://localhost:3000/geology">Geology</a>
+                        </div>
+                    </div>                    
                     <div className='polaroid'>
                         <img src={matsci} alt="Mathematical Sciences" />
                         <div className='caption'>
@@ -60,9 +81,9 @@ const HomePage = () => {
                         </div>
                     </div>
                     <div className='polaroid'>
-                        <img src={geology} alt="Geology" />
+                        <img src={schoenberg} alt="Schoenberg Hall" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/geology">Geology</a>
+                            <a href = "http://localhost:3000/schoenberghall">Schoenberg Hall</a>
                         </div>
                     </div>
                     <div className='polaroid'>

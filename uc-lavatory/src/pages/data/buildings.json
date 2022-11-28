@@ -82,6 +82,45 @@
           "type": "Point",
           "coordinates": [34.068531,-118.441315]
         }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 880,
+          "NAME": "Engineering IV",
+          "id": "engineeringiv",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.068795,-118.444007]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 881,
+          "NAME": "Engineering V",
+          "id": "engineeringv",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.069453,-118.443752]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "BUILDING_ID": 881,
+          "NAME": "Engineering VI",
+          "id": "engineeringvi",
+          "OPEN": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [34.069542,-118.444437]
+        }
       }
     ]
   }
