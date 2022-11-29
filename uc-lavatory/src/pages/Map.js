@@ -35,7 +35,7 @@ L.Marker.prototype.options.icon = DefaultIcon;
   const map = useMapEvents({
     click(e) {
       setPosition(e.latlng)
-      setClosestBuilding(findClosestBuilding(position.lat, position.lng))
+      setClosestBuilding(findClosestBuilding(e.latlng.lat, e.latlng.lng))
       map.flyTo(e.latlng, map.getZoom())
     },
   })
@@ -61,13 +61,14 @@ function findClosestBuilding(lat, lng){
       {latitude: lat, longitude: lng},
       {latitude: buildings[i].geometry.coordinates[0], longitude: buildings[i].geometry.coordinates[1]}
     );
+    console.log("Distance: " + itemDistance);
     if(itemDistance < minDist){
       minDist = itemDistance;
       minBuilding = buildings[i].properties.NAME;
     };
   }
-  console.log("Closest Building: " + minBuilding + "Distance: " + minDist);
-  arr = {name: minBuilding, dist: itemDistance};
+  console.log("Closest Building: " + minBuilding + " Distance: " + minDist);
+  arr = {name: minBuilding, dist: minDist};
   return arr;
 }
 
