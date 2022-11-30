@@ -8,7 +8,7 @@ const db = mysql.createConnection( {
   host     : 'localhost',
   user     : 'root',
   password : 'password',
-  database: 'project'
+  database: 'uclavatory'
 });
 
 const PORT = process.env.PORT || 3001;
