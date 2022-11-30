@@ -52,3 +52,11 @@ select {
     border: 1.5px solid #ddd;
     box-sizing: border-box;
   }
+
+.toprated {
+    width: 100%;
+    background-color: aliceblue;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    text-align: center;
+}

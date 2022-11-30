@@ -23,8 +23,17 @@ const Homepage = () => {
                 <img className="HeroImage" src={ucla_birdseye} alt="UCLA Birdseye View"/>
                 <img className="HeroImage" src={ucla_cos} alt="UCLA Court of Sciences" />
             </div>
-                <br></br> <h1>Buildings with Top-Rated Restrooms</h1>
-                <p>Display clickable squares of reviews here</p>             
+                <br></br> <h1>☆Top-Rated Buildings☆</h1>
+                <p>Buildings featured below have an average rating of 4 stars or higher.</p>     
+                <GenericHall.HomepageDisplay hall="Boelter Hall" linkname = "boelterhall"></GenericHall.HomepageDisplay>   
+                <GenericHall.HomepageDisplay hall="Engineering IV" linkname = "engineeringiv"></GenericHall.HomepageDisplay>
+                <GenericHall.HomepageDisplay hall="Engineering V" linkname = "engineeringv"></GenericHall.HomepageDisplay>
+                <GenericHall.HomepageDisplay hall="Engineering VI" linkname = "engineeringvi"></GenericHall.HomepageDisplay>
+                <GenericHall.HomepageDisplay hall="Geology" linkname = "geology"></GenericHall.HomepageDisplay> 
+                <GenericHall.HomepageDisplay hall="Mathematical Sciences" linkname = "mathematicalsciences"></GenericHall.HomepageDisplay> 
+                <GenericHall.HomepageDisplay hall="Pritzker Hall" linkname = "pritzkerhall"></GenericHall.HomepageDisplay> 
+                <GenericHall.HomepageDisplay hall="Schoenberg Hall" linkname = "schoenberghall"></GenericHall.HomepageDisplay> 
+                <GenericHall.HomepageDisplay hall="Young Hall" linkname = "younghall"></GenericHall.HomepageDisplay> 
         </div>
     ); 
  

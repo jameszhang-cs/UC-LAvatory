@@ -119,6 +119,41 @@ function DisplayAverage(props) {
   )
 }
 
+function IsTopRated(props) {
+  const reviewslink = 'http://localhost:3000/' + props.linkname
+  return (
+    <div>
+        {props.ratingAvg.map((val) =>{
+          if (val['avg(revRating)'] >= 4)
+          {
+            return (
+              <div className="toprated">
+              <h1>{props.hall}</h1>
+              <p><u>Average Rating of All Reviews:</u> {val['avg(revRating)']}</p>
+              <a href = {reviewslink}>See All Reviews</a>
+              </div>
+              )
+          }
+        })}
+    </div>
+  )
+}
+
+function HomepageDisplay(props){
+  const [ratingAvg, setRatingAvg] = useState([])
+  var averages = 'http://localhost:3001/api/average/' + props.hall.replace(" ", "%20");
+  useEffect(()=>{
+    Axios.get(averages).then((response)=>{
+      setRatingAvg(response.data)
+    })
+}, [])
+  return (
+    <div>
+      <IsTopRated hall={props.hall} linkname={props.linkname} ratingAvg={ratingAvg}></IsTopRated>
+    </div>
+  );
+};
+
 function DisplayReviews(props){
   const [selected, setSelected]=useState()
   const toggle = (val) => {
@@ -203,5 +238,6 @@ function FloorSelect(props) {
 const GenericHall = {
   DisplayReviews,
   SortReviews,
+  HomepageDisplay,
 }
 export default GenericHall
