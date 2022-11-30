@@ -30,7 +30,6 @@ app.get("/api/get/:id", (req, res) => {
     res.send(result);
     console.log(result);
   });
-
 });
 
 app.get("/api/get/", (req, res) => {
@@ -78,9 +77,6 @@ app.get("/api/average/:loc", (req, res) =>{
   })
 })
 
-
-
-
 app.post("/api/insert", (req, res) =>{
   const revLocation = req.body.revLocation;
   const revGender = req.body.revGender;
@@ -94,11 +90,51 @@ app.post("/api/insert", (req, res) =>{
       if (err) throw err;
       console.log(result);
   });
-
-
 });
 
+app.get("/api/fetch/pageviews", (req, res) => {
+  const sqlSelect = `SELECT * FROM pageviews`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  });
+});
 
+app.get("/api/fetch/pageviews/:loc", (req, res) =>{
+  const sqlSelect = `SELECT * FROM pageviews WHERE location = "${req.params.loc}"`;
+  db.query(sqlSelect, (err, result)=>{
+    if (err) throw err;
+    res.send(result);
+    console.log(result);
+  })
+})
+/*
+app.post("/api/post/pageviews", (req, res) =>{
+  const location = req.body.location;
+  const views = req.body.views;
+  const sqlInsert = "INSERT INTO pageviews (location, views) VALUES (?,?)";
+  db.query(sqlInsert, [location, views], (err, result) =>{
+      if (err) throw err;
+      console.log(result);
+  });
+});
+*/
+app.patch("/api/increase/pageviews/:id", (req, res) => {
+  const sqlPatch = `UPDATE pageviews SET views = views + 0.5 WHERE id = "${req.params.id}"`;
+  db.query(sqlPatch, (err, result) =>{
+    if (err) throw err;
+    console.log(result);
+  });
+});
+
+app.patch("/api/reset/pageviews", (req, res) => {
+  const sqlPatch = `UPDATE pageviews SET views = 0`;
+  db.query(sqlPatch, (err, result) =>{
+    if (err) throw err;
+    console.log(result);
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

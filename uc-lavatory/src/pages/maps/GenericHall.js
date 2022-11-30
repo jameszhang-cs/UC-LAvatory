@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Axios  from 'axios';
 import './GenericHall.css'
-
+var curViewers=0;
+var viewerStatement="";
 function SortReviews(props){
   //GenderFilter stuff
   const [ filteredGender, genderToFilter ] = React.useState("All genders");
@@ -16,15 +17,30 @@ function SortReviews(props){
   //DisplayReviews stuff 
   const [reviewList, setReviewList] = useState([])
   const [ratingAvg, setRatingAvg] = useState([])
-
   var hallName = 'http://localhost:3001/api/get/' + props.hall.replace(" ", "%20");
   var averages = 'http://localhost:3001/api/average/' + props.hall.replace(" ", "%20");
+  var viewFetch='http://localhost:3001/api/fetch/pageviews/' + props.hall.replace(" ", "%20");
   useEffect(()=>{
     Axios.get(hallName).then((response) =>{
         setReviewList(response.data)
     })
     Axios.get(averages).then((response)=>{
       setRatingAvg(response.data)
+    })
+    Axios.get(viewFetch).then((response)=>{
+      curViewers=(response.data[0].views);
+      console.log("rendering rev page with: "+response.data[0].views+" curviewers is "+curViewers);
+      if (curViewers===0) {
+        console.log("statement 0");
+        viewerStatement="Nobody has viewed this page in the past 5 minutes!"
+      } else if (curViewers===1) {
+        console.log("statement 1");
+        viewerStatement="One person has viewed this page in the past 5 minutes, better beat them to the restroom!"
+      } else {
+        console.log("statement >1");
+        viewerStatement=curViewers+" people have viewed this page in the past 5 minutes, make sure to say hi to each other in there!"
+      }
+      <h2>{viewerStatement}</h2>
     })
       // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
@@ -51,13 +67,17 @@ function SortReviews(props){
       listToUse = reviewList;
       break;
   }
+  console.log("curviewers is "+curViewers);
+
   return (
     <div>
       <h1>{props.hall}</h1>
+      <h2>{viewerStatement}</h2>
       <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
       <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
       <SortOptions sortChoice = {sortChoice} handleSort = {handleSort}></SortOptions>
       <DisplayAverage ratingAvg = {ratingAvg}></DisplayAverage>
+      <br></br>
       <DisplayReviews filteredGender = {filteredGender} floorToDisplay = {floorToDisplay} reviewList = {listToUse}></DisplayReviews>
     </div>
   );

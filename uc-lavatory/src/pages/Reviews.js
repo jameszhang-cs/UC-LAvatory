@@ -1,6 +1,7 @@
 import React from 'react';
 import Popup from '../components/Popup';
 import { useState } from 'react'
+import Axios from 'axios'
 import Form from '../components/Form';
 import "./Reviews.css"
 import flush from '../soundeffects/flushed.mp3';
@@ -15,6 +16,22 @@ import ev from '../ucla_images/engineeringv.jpg';
 import evi from '../ucla_images/engineeringvi.jpg';
 
 let audio = new Audio(flush);
+
+const updateHall = (hall) => {
+    var hallID=0;
+    var pageViews=0;
+    var increaseURL="";
+    var decreaseURL="";
+    var fetchURL = 'http://localhost:3001/api/fetch/pageviews/' + hall.replace(" ", "%20");
+    Axios.get(fetchURL).then((response) =>{
+        hallID=response.data[0].id;
+        increaseURL = 'http://localhost:3001/api/increase/pageviews/' + hallID;
+        decreaseURL = 'http://localhost:3001/api/decrease/pageviews/' + hallID;
+        Axios.patch(increaseURL);
+        pageViews=response.data[0].views;
+    });
+}
+
 const HomePage = () => {
     const handleClick = () => {
         audio.play();
@@ -41,7 +58,9 @@ const HomePage = () => {
                     <div className='polaroid'>
                         <img src={boelter} alt="Boelter Hall" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/boelterhall">Boelter Hall</a>
+                            <a href = "http://localhost:3000/boelterhall">
+                            <button onClick={updateHall("Boelter Hall")}>Boelter Hall</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
