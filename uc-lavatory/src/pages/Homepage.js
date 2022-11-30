@@ -1,29 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import ucla_pritzker from '../ucla_images/ucla_pritzker.jpg';
 import ucla_royce from '../ucla_images/ucla_royce.jpg';
 import ucla_birdseye from '../ucla_images/ucla_birdseye.jpg';
 import ucla_cos from '../ucla_images/ucla_cos.jpg';
 import "./Homepage.css";
-import Axios  from 'axios';
+import GenericHall from './maps/GenericHall';
 
 const current = new Date();
 const date = `${current.getMonth()}.${current.getDate()}.${current.getFullYear()}`;
-
-// in progress
-// function FindTopRated(props) {
-//     // finds top 3 buildings w highest average rating
-//     const [ratingAvg, setRatingAvg] = useState([])
-//     var averages = 'http://localhost:3001/api/average/' + props.hall.replace(" ", "%20");
-//     useEffect(()=>{
-//       Axios.get(averages).then((response)=>{
-//         setRatingAvg(response.data)
-//       })
-//   }, [])
-
-//   var displayList=[]
-//   displayList=[...props.averages];
-// }
-
 
 const Homepage = () => {
     return (
@@ -39,10 +23,8 @@ const Homepage = () => {
                 <img className="HeroImage" src={ucla_birdseye} alt="UCLA Birdseye View"/>
                 <img className="HeroImage" src={ucla_cos} alt="UCLA Court of Sciences" />
             </div>
-            <main>
-                <br></br> <h1>Building with Top-Rated Restrooms</h1>
-                <p>Display clickable squares of reviews here</p>
-            </main>
+                <br></br> <h1>Buildings with Top-Rated Restrooms</h1>
+                <p>Display clickable squares of reviews here</p>             
         </div>
     ); 
  

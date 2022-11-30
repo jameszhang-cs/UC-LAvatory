@@ -32,14 +32,14 @@ const updateHall = (hall) => {
     });
 }
 
-const HomePage = () => {
+const Reviews = () => {
     const handleClick = () => {
         audio.play();
         setButtonPopup(true);
     }
     const [buttonPopup, setButtonPopup] = useState(false);
     return (
-        <body>
+        <main>
             <div className="row">
                 <div className="column side">
                         <h1>UC-Lavatory</h1>
@@ -114,9 +114,9 @@ const HomePage = () => {
                      </ul>  
                 </div>
             </div>
-        </body>
+        </main>
     );
 }
 
-export default HomePage;
+export default Reviews;
 
