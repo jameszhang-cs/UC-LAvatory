@@ -30,6 +30,7 @@ function SortReviews(props){
     Axios.get(viewFetch).then((response)=>{
       curViewers=(response.data[0].views);
       console.log("rendering rev page with: "+response.data[0].views+" curviewers is "+curViewers);
+      curViewers=Math.round(curViewers)
       if (curViewers===0) {
         console.log("statement 0");
         viewerStatement="Nobody has viewed this page in the past 5 minutes!"
