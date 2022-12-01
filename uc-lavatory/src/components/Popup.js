@@ -1,10 +1,7 @@
 import React from 'react'
 import './Popup.css'
-import fart from '../soundeffects/fart.mp3'
-let audio = new Audio(fart);
 function Popup(props) {
   const handleClick = () => {
-    audio.play();
     props.setTrigger(false)
   }
   return (props.trigger) ? (
