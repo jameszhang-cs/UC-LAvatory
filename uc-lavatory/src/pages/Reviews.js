@@ -76,7 +76,7 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className='polaroid'>
-                        <img src={eiv} alt="Engineering VI" />
+                        <img src={evi} alt="Engineering VI" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringvi">Engineering VI</a>
                         </div>

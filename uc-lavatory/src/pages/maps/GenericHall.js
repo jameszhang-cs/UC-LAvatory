@@ -128,9 +128,9 @@ function IsTopRated(props) {
           {
             return (
               <div className="toprated">
-              <h1>{props.hall}</h1>
-              <p><u>Average Rating of All Reviews:</u> {val['avg(revRating)']}</p>
-              <a href = {reviewslink}>See All Reviews</a>
+                  <h1>{props.hall}</h1>
+                  <p><u>Average Rating of All Reviews:</u> {val['avg(revRating)'].toFixed(2)}</p>
+                  <a href = {reviewslink}>See All Reviews</a>
               </div>
               )
           }
