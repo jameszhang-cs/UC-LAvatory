@@ -66,49 +66,65 @@ const Reviews = () => {
                     <div className='polaroid'>
                         <img src={eiv} alt="Engineering IV" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/engineeringiv">Engineering IV</a>
+                            <a href = "http://localhost:3000/engineeringiv">
+                            <button onClick={updateHall("Engineering IV")}>Engineering IV</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={ev} alt="Engineering V" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/engineeringv">Engineering V</a>
+                            <a href = "http://localhost:3000/engineeringv">
+                            <button onClick={updateHall("Engineering V")}>Engineering V</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={eiv} alt="Engineering VI" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/engineeringvi">Engineering VI</a>
+                            <a href = "http://localhost:3000/engineeringvi">
+                            <button onClick={updateHall("Engineering V")}>Engineering V</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={geology} alt="Geology" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/geology">Geology</a>
+                            <a href = "http://localhost:3000/geology">
+                            <button onClick={updateHall("Geology")}>Geology</button>
+                            </a>
                         </div>
                     </div>                    
                     <div className='polaroid'>
                         <img src={matsci} alt="Mathematical Sciences" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/mathematicalsciences">Mathematical Sciences Building</a>
+                            <a href = "http://localhost:3000/mathematicalsciences">
+                            <button onClick={updateHall("Mathematical Sciences")}>Mathematical Sciences</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={pritzker} alt="Pritzker Hall" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/pritzkerhall">Pritzker Hall</a>
+                            <a href = "http://localhost:3000/pritzkerhall">
+                            <button onClick={updateHall("Pritzker Hall")}>Pritzker Hall</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={schoenberg} alt="Schoenberg Hall" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/schoenberghall">Schoenberg Hall</a>
+                            <a href = "http://localhost:3000/schoenberghall">
+                            <button onClick={updateHall("Schoenberg Hall")}>Schoenberg Hall</button>
+                            </a>
                         </div>
                     </div>
                     <div className='polaroid'>
                         <img src={younghall} alt="Young Hall" />
                         <div className='caption'>
-                            <a href = "http://localhost:3000/younghall">Young Hall</a>
+                            <a href = "http://localhost:3000/younghall">
+                            <button onClick={updateHall("Young Hall")}>Young Hall</button>
+                            </a>
                         </div>
                     </div>
                      </ul>  
