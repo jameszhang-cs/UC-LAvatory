@@ -2,7 +2,7 @@ UC-Lavatory
 =========
 
 #### Required Installation: MySQL
-To run the website, MySQL must be installed on your local machine. To do so, visit the official [the official MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) and follow the instructions there, or alternatively follow [this simpler guide](https://www.javatpoint.com/how-to-install-mysql)
+To run the website, MySQL must be installed on your local machine. To do so, visit the official [the official MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) and follow the instructions there, or alternatively follow [this simpler guide](https://www.javatpoint.com/how-to-install-mysql).  
 After MySQL has been installed, open the UC-Lavatory_MySQL_Init.sql file and execute the contents using MySQL Workbench or another query executor of your choice.
 
 #### Disclaimers:
