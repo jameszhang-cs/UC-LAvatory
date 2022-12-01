@@ -16,6 +16,7 @@ CREATE TABLE pageviews (
 	views VARCHAR(255), 
 	PRIMARY KEY(id)
 );
+SET SQL_SAFE_UPDATES=0;
 INSERT INTO pageviews (location, views) VALUES ("Boelter Hall","0");
 INSERT INTO pageviews (location, views) VALUES ("Engineering IV","0");
 INSERT INTO pageviews (location, views) VALUES ("Engineering V","0");
