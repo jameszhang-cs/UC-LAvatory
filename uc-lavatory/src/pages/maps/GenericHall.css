@@ -54,9 +54,12 @@ select {
   }
 
 .toprated {
-    width: 100%;
-    background-color: aliceblue;
-    margin-bottom: 5px;
-    padding: 10px 20px;
-    text-align: center;
+    background: rgb(201, 230, 249);
+    border: 0;
+    padding: 8px;
+    padding-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 75%;
 }

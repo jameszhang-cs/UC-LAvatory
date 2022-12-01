@@ -80,7 +80,7 @@ const Reviews = () => {
                         </div>
                     </div>
                     <div className='polaroid'>
-                        <img src={eiv} alt="Engineering VI" />
+                        <img src={evi} alt="Engineering VI" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringvi">
                             <button onClick={updateHall("Engineering V")}>Engineering V</button>
