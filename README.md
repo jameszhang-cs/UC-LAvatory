@@ -1,22 +1,17 @@
-# UC-LAvatory
+UC-Lavatory
+=========
 
-MySQL Installation instructions in https://www.javatpoint.com/how-to-install-mysql
-Once installed, open MySQL Workbench
-Run the following commands in a Query tab:
-CREATE DATABASE project;
-USE project;
-CREATE TABLE reviews (id INT AUTO_INCREMENT, revLocation VARCHAR(255), revRating VARCHAR(255), revBody VARCHAR(255), PRIMARY KEY(id));
+#### Required Installation: MySQL
+To run the website, MySQL must be installed on your local machine. To do so, visit the official [the official MySQL installation guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) and follow the instructions there, or alternatively follow [this simpler guide](https://www.javatpoint.com/how-to-install-mysql)
+After MySQL has been installed, open the UC-Lavatory_MySQL_Init.sql file and execute the contents using MySQL Workbench or another query executor of your choice.
 
-This will create a database named project, a table named reviews in project, allowing data to be sent there by the server
-Names subject to change
+#### Disclaimers:
+This webapp has been tested with the Safari and Google Chrome browsers. Running this webapp on other browsers may not result in proper functionality.  
+This node project runs on ports 3000 and 3001. If these ports are busy, this webapp may not function properly.
 
-Required packages for react and how to install them:
-
-'npm install leaflet'
-'npm install react-router-dom'
-'npm install axios'
-'npm install geolib'
-
-if on MacOS and nodemon does not work:
-'npm install mysql'
-'npm install cors'
+#### Initialization
+To start, open two command line terminals using the program of your choice and cd into the project repository after cloning.  
+cd into both the server directory and the uc-lavatory directory using the two terminals.  
+Run npm install in both terminals to install required dependencies.  
+Run npm start in both terminals.  
+Enjoy!
