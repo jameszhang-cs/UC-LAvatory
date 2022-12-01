@@ -23,8 +23,8 @@ db.connect((err) =>{
   console.log('MySQL Connected');
 });
 
-app.get("/api/get/:id", (req, res) => {
-  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.id}"`;
+app.get("/api/get/:loc", (req, res) => {
+  const sqlSelect = `SELECT * FROM reviews WHERE revLocation = "${req.params.loc}"`;
   db.query(sqlSelect, (err, result) => {
     if (err) throw err;
     res.send(result);
@@ -97,7 +97,7 @@ app.get("/api/fetch/pageviews", (req, res) => {
   db.query(sqlSelect, (err, result)=>{
     if (err) throw err;
     res.send(result);
-    console.log(result);
+    console.log("FETCH"+result);
   });
 });
 

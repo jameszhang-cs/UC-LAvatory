@@ -147,7 +147,7 @@ function HomepageDisplay(props){
     Axios.get(averages).then((response)=>{
       setRatingAvg(response.data)
     })
-}, [])
+  }, [])
   return (
     <div>
       <IsTopRated hall={props.hall} linkname={props.linkname} ratingAvg={ratingAvg}></IsTopRated>

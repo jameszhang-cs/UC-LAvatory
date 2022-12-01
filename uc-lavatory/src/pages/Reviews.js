@@ -83,7 +83,7 @@ const Reviews = () => {
                         <img src={evi} alt="Engineering VI" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringvi">
-                            <button onClick={updateHall("Engineering V")}>Engineering V</button>
+                            <button onClick={updateHall("Engineering VI")}>Engineering VI</button>
                             </a>
                         </div>
                     </div>

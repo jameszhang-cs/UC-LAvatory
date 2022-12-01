@@ -9,8 +9,8 @@ import MathematicalSciences from '../pages/maps/MathematicalSciences'
 import PritzkerHall from '../pages/maps/PritzkerHall'
 import Geology from '../pages/maps/Geology'
 import YoungHall from '../pages/maps/YoungHall'
-import EngineeringIV from '../pages/maps/EngineeringVI'
-import EngineeringV from '../pages/maps/EngineeringVI'
+import EngineeringIV from '../pages/maps/EngineeringIV'
+import EngineeringV from '../pages/maps/EngineeringV'
 import EngineeringVI from '../pages/maps/EngineeringVI'
 
 function AppRouter() {
