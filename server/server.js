@@ -13,7 +13,7 @@ const db = mysql.createConnection( {
 
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({origin: true, credentials: true}));
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -121,7 +121,7 @@ app.post("/api/post/pageviews", (req, res) =>{
 });
 */
 app.patch("/api/increase/pageviews/:id", (req, res) => {
-  const sqlPatch = `UPDATE pageviews SET views = views + 0.5 WHERE id = "${req.params.id}"`;
+  const sqlPatch = `UPDATE pageviews SET views = views + 1 WHERE id = "${req.params.id}"`;
   db.query(sqlPatch, (err, result) =>{
     if (err) throw err;
     console.log(result);

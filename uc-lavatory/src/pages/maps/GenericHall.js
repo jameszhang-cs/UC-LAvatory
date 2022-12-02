@@ -29,16 +29,12 @@ function SortReviews(props){
     })
     Axios.get(viewFetch).then((response)=>{
       curViewers=(response.data[0].views);
-      console.log("rendering rev page with: "+response.data[0].views+" curviewers is "+curViewers);
       curViewers=Math.round(curViewers)
       if (curViewers===0) {
-        console.log("statement 0");
         viewerStatement="Nobody has viewed this page in the past 5 minutes!"
       } else if (curViewers===1) {
-        console.log("statement 1");
         viewerStatement="One person has viewed this page in the past 5 minutes, better beat them to the restroom!"
       } else {
-        console.log("statement >1");
         viewerStatement=curViewers+" people have viewed this page in the past 5 minutes, make sure to say hi to each other in there!"
       }
       <h2>{viewerStatement}</h2>
@@ -68,7 +64,6 @@ function SortReviews(props){
       listToUse = reviewList;
       break;
   }
-  console.log("curviewers is "+curViewers);
 
   return (
     <div>

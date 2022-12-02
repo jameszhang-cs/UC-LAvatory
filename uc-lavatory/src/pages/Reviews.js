@@ -21,15 +21,33 @@ const updateHall = (hall) => {
     var hallID=0;
     var pageViews=0;
     var increaseURL="";
-    var decreaseURL="";
     var fetchURL = 'http://localhost:3001/api/fetch/pageviews/' + hall.replace(" ", "%20");
+    console.log(fetchURL);
     Axios.get(fetchURL).then((response) =>{
+        console.log("yo");
         hallID=response.data[0].id;
         increaseURL = 'http://localhost:3001/api/increase/pageviews/' + hallID;
-        decreaseURL = 'http://localhost:3001/api/decrease/pageviews/' + hallID;
         Axios.patch(increaseURL);
         pageViews=response.data[0].views;
+    })
+    .catch((error)=> {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        }
     });
+    console.log("update finished");
 }
 
 const Reviews = () => {
@@ -59,7 +77,10 @@ const Reviews = () => {
                         <img src={boelter} alt="Boelter Hall" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/boelterhall">
-                            <button onClick={updateHall("Boelter Hall")}>Boelter Hall</button>
+                            <button onClick={()=>{
+                                updateHall("Boelter Hall");
+                                console.log("boelter clicked");
+                            }}>Boelter Hall</button>
                             </a>
                         </div>
                     </div>
@@ -67,7 +88,7 @@ const Reviews = () => {
                         <img src={eiv} alt="Engineering IV" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringiv">
-                            <button onClick={updateHall("Engineering IV")}>Engineering IV</button>
+                            <button onClick={()=>{updateHall("Engineering IV")}}>Engineering IV</button>
                             </a>
                         </div>
                     </div>
@@ -75,7 +96,7 @@ const Reviews = () => {
                         <img src={ev} alt="Engineering V" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringv">
-                            <button onClick={updateHall("Engineering V")}>Engineering V</button>
+                            <button onClick={()=>{updateHall("Engineering V")}}>Engineering V</button>
                             </a>
                         </div>
                     </div>
@@ -83,7 +104,7 @@ const Reviews = () => {
                         <img src={evi} alt="Engineering VI" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/engineeringvi">
-                            <button onClick={updateHall("Engineering VI")}>Engineering VI</button>
+                            <button onClick={()=>{updateHall("Engineering VI")}}>Engineering VI</button>
                             </a>
                         </div>
                     </div>
@@ -91,7 +112,7 @@ const Reviews = () => {
                         <img src={geology} alt="Geology" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/geology">
-                            <button onClick={updateHall("Geology")}>Geology</button>
+                            <button onClick={()=>{updateHall("Geology")}}>Geology</button>
                             </a>
                         </div>
                     </div>                    
@@ -99,7 +120,7 @@ const Reviews = () => {
                         <img src={matsci} alt="Mathematical Sciences" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/mathematicalsciences">
-                            <button onClick={updateHall("Mathematical Sciences")}>Mathematical Sciences</button>
+                            <button onClick={()=>{updateHall("Mathematical Sciences")}}>Mathematical Sciences</button>
                             </a>
                         </div>
                     </div>
@@ -107,7 +128,7 @@ const Reviews = () => {
                         <img src={pritzker} alt="Pritzker Hall" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/pritzkerhall">
-                            <button onClick={updateHall("Pritzker Hall")}>Pritzker Hall</button>
+                            <button onClick={()=>{updateHall("Pritzker Hall")}}>Pritzker Hall</button>
                             </a>
                         </div>
                     </div>
@@ -115,7 +136,7 @@ const Reviews = () => {
                         <img src={schoenberg} alt="Schoenberg Hall" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/schoenberghall">
-                            <button onClick={updateHall("Schoenberg Hall")}>Schoenberg Hall</button>
+                            <button onClick={()=>{updateHall("Schoenberg Hall")}}>Schoenberg Hall</button>
                             </a>
                         </div>
                     </div>
@@ -123,7 +144,7 @@ const Reviews = () => {
                         <img src={younghall} alt="Young Hall" />
                         <div className='caption'>
                             <a href = "http://localhost:3000/younghall">
-                            <button onClick={updateHall("Young Hall")}>Young Hall</button>
+                            <button onClick={()=>{updateHall("Young Hall")}}>Young Hall</button>
                             </a>
                         </div>
                     </div>
