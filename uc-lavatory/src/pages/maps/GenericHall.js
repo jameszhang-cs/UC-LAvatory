@@ -37,7 +37,7 @@ function SortReviews(props){
      } else {
        viewerStatement=curViewers+" people have viewed this page in the past 5 minutes, make sure to say hi to each other in there!"
      }
-     <h2>{viewerStatement}</h2>
+     <h3>{viewerStatement}</h3>
    })
      // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
@@ -70,7 +70,7 @@ function SortReviews(props){
      <div className="row">
        <div className="column left">
          <h1>{props.hall}</h1>
-         <h2>{viewerStatement}</h2>
+         <h3>{viewerStatement}</h3>
          <DisplayAverage ratingAvg = {ratingAvg}></DisplayAverage>
          <FloorSelect floors = {props.floors} handleFloor= {handleFloor}></FloorSelect>
          <GenderFilter filteredGender = {filteredGender} handleGender = {handleGender}></GenderFilter>
