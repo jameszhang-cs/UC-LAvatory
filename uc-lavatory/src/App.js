@@ -6,11 +6,6 @@ import Axios from 'axios';
 const FIVE_MIN_MS=300000;
 
 function App() {
-  useEffect(()=> {
-    const interval = setInterval(() => {
-      Axios.patch("http://localhost:3001/api/reset/pageviews");
-    }, FIVE_MIN_MS);
-  }, [])
   return (
     <div className="App">
       <div className = "Navbar">

@@ -88,7 +88,7 @@ const Form = () => {
             placeholder="Floor"
             onChange = {(e)=>{setRevFloor(e.target.value)}}
         />
-        <label>Rating: </label>
+        <label>Rating: {formData.rating}</label>
         <input
             required
             min={1}
