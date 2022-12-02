@@ -109,7 +109,7 @@ function DisplayAverage(props) {
   return (
     <h3>
         {props.ratingAvg.map((val) =>{
-            return <h1>Average Rating of All Reviews: {val['avg(revRating)']}</h1>
+            return <h2>Average Rating of All Reviews: {val['avg(revRating)']} stars</h2>
         })}
     </h3>
   )
@@ -198,7 +198,7 @@ function DisplayReviews(props){
               <div className={selected === val ? 'body show' : 'body'}>
                 {val.revBody}
                 <br></br>
-                reviewed on {val.revTime}
+                <p>reviewed on {val.revTime}</p>
               </div>
             </div>
         ))}
