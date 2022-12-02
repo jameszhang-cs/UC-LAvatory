@@ -1,58 +1,58 @@
 main{
   background-color: rgb(201, 230, 249);
-}
-
-.row::after {
+ }
+  
+ .row::after {
     content: "";
     display: table;
     clear: both;
-}
-
-.column {
+ }
+  
+ .column {
     float: left;
     height: 100vh;
-}
-  
-.column.side {
+ }
+  .column.side {
     width: 25%;
-    background-color: rgb(201, 230, 249);
+    background-color: rgb(255, 255, 255);
     padding: 5px;
-}
-  
-.column.middle {
+ }
+  .column.middle {
     width: 74.3%;
-    background-color: rgb(255, 254, 227);
+    background-color: rgb(243, 243, 243);
     height: 100%;
-}
-
-.column h1 {
-    font-family: Century Gothic;
-    font-weight: bold;
-    font-size: 45px;
+ }
+  
+ .column h1 {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
+    font-weight: 600;
+    font-size: 40px;
     margin: 10px;
+    margin-top: 20px;
     text-align: center;
     color: black;
-}
-
-.column p{
+ }
+  
+ .column p{
     text-align: center;
-    font-family: Gill Sans, sans-serif;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
     font-size: 20px;
-}
-
-.column.side button {
-    background-color: gray;
-    border-radius: 5px;
-
+    font-weight: 500;
+ }
+  
+ .column.side button {
+    border-radius: 8px;
     color: white;
+    background-color: #1b58c0;
     padding: 12px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
-    font-family: Gill Sans, sans-serif;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    cursor: pointer;
   }
-
+  
   .polaroid{
     float:left;
     width: 300px;
@@ -61,24 +61,24 @@ main{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 15px;
   }
-
+  
   .polaroid img{
     width: 300px;
     max-height: 200px;
     object-fit: cover;
     height:auto;
   }
-
+  
   .caption {
     text-align: center;
     padding: 10px 20px;
   }
-
+  
   a:link{
-    font-family: Gill Sans, sans-serif;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;;
   }
-
-@media screen and (max-width:1000px) {
+  
+ @media screen and (max-width:1000px) {
     .column.side {
       width: 100%;
     }
@@ -86,3 +86,4 @@ main{
         width: 100%;
       }
   }
+ 
