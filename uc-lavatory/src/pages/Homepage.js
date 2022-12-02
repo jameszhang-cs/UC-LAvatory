@@ -7,7 +7,7 @@ import "./Homepage.css";
 import GenericHall from './maps/GenericHall';
 
 const current = new Date();
-const date = `${current.getMonth()}.${current.getDate()}.${current.getFullYear()}`;
+const date = `${current.getMonth()+1}.${current.getDate()}.${current.getFullYear()}`;
 
 const Homepage = () => {
     return (

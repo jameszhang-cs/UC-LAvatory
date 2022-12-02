@@ -4,7 +4,6 @@ import { useState } from 'react'
 import Axios from 'axios'
 import Form from '../components/Form';
 import "./Reviews.css"
-import flush from '../soundeffects/flushed.mp3';
 import boelter from '../ucla_images/boelter.jpg';
 import schoenberg from '../ucla_images/schoenberg.jpg';
 import matsci from '../ucla_images/mathematicalsciences.jpg';
@@ -15,7 +14,6 @@ import eiv from '../ucla_images/engineeringiv.jpg';
 import ev from '../ucla_images/engineeringv.jpg';
 import evi from '../ucla_images/engineeringvi.jpg';
 
-let audio = new Audio(flush);
 
 const updateHall = (hall) => {
     var hallID=0;
@@ -52,7 +50,6 @@ const updateHall = (hall) => {
 
 const Reviews = () => {
     const handleClick = () => {
-        audio.play();
         setButtonPopup(true);
     }
     const [buttonPopup, setButtonPopup] = useState(false);
