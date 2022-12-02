@@ -88,7 +88,7 @@ const Form = () => {
             placeholder="Floor"
             onChange = {(e)=>{setRevFloor(e.target.value)}}
         />
-        <label>Rating: {formData.rating}</label>
+        <label>Rating: {revRating}</label>
         <input
             required
             min={1}
@@ -105,8 +105,6 @@ const Form = () => {
             value={formData.review}
             onChange={handleChange}
         />
-        <p><u>Confirm Review: </u></p>
-        <p>{formData.review}</p>
         <button onClick = {submitReview}>Submit</button>
     </form>
   )
