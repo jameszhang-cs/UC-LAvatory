@@ -50,7 +50,7 @@ const Form = () => {
         revRating: revRating, 
         revBody: revBody,
         revYear: current.getFullYear(),
-        revMonth: current.getMonth(),
+        revMonth: current.getMonth()+1,
         revDay: current.getDate()
 
       }).then(() => {
