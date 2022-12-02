@@ -33,7 +33,7 @@ function SortReviews(props){
       if (curViewers===0) {
         viewerStatement="Nobody has viewed this page in the past 5 minutes!"
       } else if (curViewers===1) {
-        viewerStatement="One person has viewed this page in the past 5 minutes, better beat them to the restroom!"
+        viewerStatement="Only you have viewed the page in the past 5 minutes, have fun and don't slip!"
       } else {
         viewerStatement=curViewers+" people have viewed this page in the past 5 minutes, make sure to say hi to each other in there!"
       }
