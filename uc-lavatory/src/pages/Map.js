@@ -10,7 +10,7 @@ import "leaflet/dist/leaflet.css";
 import icon from 'leaflet/dist/images/marker-icon.png';
 import redIcon from './red_marker.png'
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-const center = [34.0689, -118.4452]
+const center = [34.0691, -118.442]
 const buildings = buildingData.features
 
 var DefaultIcon = L.icon({
